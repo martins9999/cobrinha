@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets//favicon.png" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Jogo da Cobrinha</title>
+</head>
+<body>
+    <div class="menu-screen">
+        <div class="game-over">Fim de Jogo</div>
+        <div class="final-score">Pontuação:<span>00</span></div>
+        <div class="button_level">
+            <button class="lento lv">Lento</button>
+            <button class="normal lv lv_On">Normal</button>
+            <button class="rapido lv">Rápido</button>
+            <button class="ultra lv">Últra</button>
+        </div>
+        <button class="btn-play">Jogar</button>
+    </div>
+    <div class="container">
+        <div class="placar">
+            <div class="score">Pontuação: <span>00</span></div>    
+        </div>
+        <span class="text_pause">Pause</span>
+        <canvas width="360" height="360"></canvas>
+        <div class="controle">
+            <div class="setas">
+                <div class="seta_UD cima"><img src="./assets/cima.png" /></div>
+                <div class="content_RL">
+                    <div class="seta_RL esquerda"><img src="./assets/esquerda.png" /></div>
+                    <div class="seta_RL direita"><img src="./assets/direita.png" /></div>
+                </div>
+                <div class="seta_UD baixo"><img src="./assets/baixo.png" /></div>
+            </div>
+            <div class="pp">
+                <img class="play" src="./assets/play.png"/>
+                <img class="pause" src="./assets/pause.png"/>
+            </div>
+        </div>
+    </div>  
+    <script src="./js/script.js"></script>
+</body>
+</html>
