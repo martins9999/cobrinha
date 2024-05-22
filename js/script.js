@@ -1,4 +1,5 @@
-const canvas = document.querySelector('canvas');
+const canvas = document.querySelector('.canvas');
+const placar = document.querySelector('.placar');
 const ctx = canvas.getContext('2d');
 const audio = new Audio('../assets/audio.mp3');
 const score = document.querySelector(".score > span");
@@ -12,6 +13,90 @@ const baixo = document.querySelector('.baixo');
 const pause = document.querySelector('.pause');
 const play = document.querySelector('.play');
 const textPause = document.querySelector('.text_pause');
+
+
+
+const avancarTemaS = document.querySelector('.avTmS');
+const voltarTemaS = document.querySelector('.voTmS');
+const avancarTemaC = document.querySelector('.avTmC');
+const voltarTemaC = document.querySelector('.voTmC');
+
+let headColor = "rgb(250,0,0)"; ;
+let bodyColor = "rgb(200,0,30)";
+let temaCanvas = 1;
+let temaSnake = 1;
+
+avancarTemaS.addEventListener('click', ()=> {
+    if(temaSnake < 5) {
+        temaSnake += 1;
+    }
+    snakeTema()
+})
+voltarTemaS.addEventListener('click', ()=> {
+    if(temaSnake > 1) {
+        temaSnake -= 1;
+    }
+    snakeTema()
+})
+const snakeTema = () => {
+    if(temaSnake === 1) {
+        headColor = "rgb(250,0,0)";
+        bodyColor = "rgb(200,0,30)";
+    }
+    if(temaSnake === 2) {
+        headColor = "rgb(240,240,240)";
+        bodyColor = "rgb(120,120,120)";
+    }
+    if(temaSnake === 3) {
+        headColor = "rgb(20,90,150)";
+        bodyColor = "rgb(0,30,90)";
+    }
+    if(temaSnake === 4) {
+        headColor = "rgb(80,80,80)";
+        bodyColor = "rgb(20,20,20)";
+    }
+    if(temaSnake === 5) {
+        headColor = "rgb(60,200,90)";
+        bodyColor = "rgb(10,100,20)";
+    }      
+}
+
+
+avancarTemaC.addEventListener('click', ()=> {
+    if(temaCanvas < 5) {
+        temaCanvas += 1;
+    }
+    canvasTema()
+})
+voltarTemaC.addEventListener('click', ()=> {
+    if(temaCanvas > 1) {
+        temaCanvas -= 1;
+    }
+    canvasTema()
+})
+
+const canvasTema = () => {
+    if(temaCanvas === 1) {
+        canvas.style.backgroundColor="rgb(0,80,40)";
+        placar.style.backgroundColor="rgb(0,80,40)";
+    }
+    if(temaCanvas === 2) {
+        canvas.style.backgroundColor="rgb(80,80,40)";
+        placar.style.backgroundColor="rgb(80,80,40)";
+    }
+    if(temaCanvas === 3) {
+        canvas.style.backgroundColor="rgb(80,80,80)";
+        placar.style.backgroundColor="rgb(80,80,80)";
+    }
+    if(temaCanvas === 4) {
+        canvas.style.backgroundColor="rgb(80,40,80)";
+        placar.style.backgroundColor="rgb(80,40,80)";
+    }
+    if(temaCanvas === 5) {
+        canvas.style.backgroundColor="rgb(40,80,80)";
+        placar.style.backgroundColor="rgb(40,80,80)";
+    }      
+}
 
 
 
@@ -62,12 +147,14 @@ const drawFood = () => {
     ctx.shadowBlur = 0;
 }
 
+
+
 const drawSnake = () => {
-    ctx.fillStyle = "rgb(200,0,30)";
+    ctx.fillStyle = bodyColor;
     
     snake.forEach((position, index) => {
         if (index == snake.length - 1) {
-            ctx.fillStyle = "rgb(250,0,0)";
+            ctx.fillStyle = headColor;
             ctx.shadowColor = "yellow";
             ctx.shadowBlur = 2;
         }
@@ -197,7 +284,7 @@ ultra.addEventListener('click', ()=> {
     normal.classList.remove('lv_On');
     rapido.classList.remove('lv_On');
     ultra.classList.add('lv_On');
-    vlcd = 40;
+    vlcd = 80;
 })
 
 
@@ -205,7 +292,7 @@ const gameLoop = () => {
     clearInterval(loopId);
 
     ctx.clearRect(0, 0, 360, 360);
-    drawGrid();
+    //drawGrid();
     drawFood();
     moveSnake();
     drawSnake();
@@ -281,7 +368,4 @@ buttonPlay.addEventListener("click", () => {
     menu.style.display = "none";
     container.style.filter = "none";
     snake = [{x: 15, y: 0},{x: 30, y: 0}];
-    if (jogar == true && direction != "left") {
-        direction = "right";
-    }
 })
