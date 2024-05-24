@@ -3,54 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets//favicon.png" />
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Jogo da Cobrinha</title>
+    <link rel="stylesheet" href="./index.css">
+    <title>Joguinho da Cobra</title>
 </head>
 <body>
-    <div class="menu-screen">
-        <div class="game-over">Fim de Jogo</div>
-        <div class="final-score">Pontuação:<span>00</span></div>
-        <div class="container_level">
-            <span class="level">Nível</span>
-            <button class="lento lv">Lento</button>
-            <button class="normal lv lv_On">Normal</button>
-            <button class="rapido lv">Rápido</button>
-            <button class="ultra lv">Últra</button>
-        </div>
-        <button class="btn-play">Jogar</button>
-    </div>
     <div class="container">
-        <div class="placar">
-            <div class="score">Pontuação: <span>00</span></div>    
+        <div class="pontuacao-1">
+            <span>Pontuação</span>
+            <span class="pontuacao-valor-1">00</span>
         </div>
-        <span class="text_pause">Pause</span>
-        <canvas class="canvas" width="360" height="360"></canvas>
-        <div class="container_tema">
-            <div class="tema">
-                <img class="voTmS" src="./assets/esquerda.png" />
-                <span>Cobra</span>
-                <img class="avTmS" src="./assets/direita.png" />
+        <canvas class="campo" width="360" height="360"></canvas>
+        <div class="menu-container">
+            <div class="text-fim">Fim de Jogo</div>
+            <div class="pontuacao-2">
+                <span>Pontuação:</span>
+                <span class="pontuacao-valor-2">00</span>
             </div>
-            <div class="tema">
-                <img class="voTmC" src="./assets/esquerda.png" />
-                <span>Campo</span>
-                <img class="avTmC" src="./assets/direita.png" />
-            </div>
-        </div>
-        <div class="controle">
-                <div class="seta_UD cima"><img src="./assets/cima.png" /></div>
-                <div class="content_RL">
-                    <div class="seta_RL esquerda"><img src="./assets/esquerda.png" /></div>
-                    <div class="pp">
-                        <img class="play" src="./assets/play.png"/>
-                        <img class="pause" src="./assets/pause.png"/>
-                    </div>
-                    <div class="seta_RL direita"><img src="./assets/direita.png" /></div>
+            <div class="menu-content">
+                <div class="nivel">
+                    <span>Escolher</br>nível</span>
+                    <button class="botao-lento niv">Lento</button>
+                    <button class="botao-normal niv niv-On">Normal</button>
+                    <button class="botao-rapido niv">Rápido</button>
+                    <button class="botao-ultra niv">Últra</button>
                 </div>
-                <div class="seta_UD baixo"><img src="./assets/baixo.png" /></div>
+                <div class="temas">
+                    <span>Escolher cores</span>
+                    <div class="t-campo">
+                        <div class="T t-corpo"></div>
+                        <div class="T t-cabeca"></div>
+                    </div>
+                    <div class="tema">
+                        <div class="botao-tema vo-cobra"><img src="./assets/esquerda.png" /></div>
+                        <span>Cobra</span>
+                        <div class="botao-tema av-cobra"><img src="./assets/direita.png" /></div>
+                    </div>
+                    <div class="tema">
+                        <div class="botao-tema vo-campo"><img src="./assets/esquerda.png" /></div>
+                        <span>Campo</span>
+                        <div class="botao-tema av-campo"><img src="./assets/direita.png" /></div>
+                    </div>
+                </div>
+            </div>
+            <button class="botao-jogar">Jogar</button>
         </div>
-    </div>  
-    <script src="./js/script.js"></script>
+        <span class="text-pause">Pause</span>
+        <div class="controle-container">
+            <div class="botao-p-cima controle"><img src="./assets/cima.png" /></div>
+            <div class="botoes-centro">
+                <div class="botao-p-esquerda controle"><img src="./assets/esquerda.png" /></div>
+                <div class="botoes-play-pause">
+                    <img class="botao-play" src="./assets/play.png"/>
+                    <img class="botao-pause" src="./assets/pause.png"/>
+                </div>
+                <div class="botao-p-direita controle"><img src="./assets/direita.png" /></div>
+            </div>
+            <div class="botao-p-baixo controle"><img src="./assets/baixo.png" /></div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
 </body>
 </html>

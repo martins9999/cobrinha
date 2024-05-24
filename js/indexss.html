@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets//favicon.png" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Jogo da Cobrinha</title>
+</head>
+<body>
+    <div class="menu-screen">
+        <div class="final-score">Pontuação:<span>00</span></div>
+        <div class="container_level">
+            <span class="level">Nível</span>
+            <button class="lento lv">Lento</button>
+            <button class="normal lv lv_On">Normal</button>
+            <button class="rapido lv">Rápido</button>
+            <button class="ultra lv">Últra</button>
+        </div>
+        <button class="btn-play">Jogar</button>
+    </div>
+    <div class="container">
+        <div class="placar">
+            <div class="score">Pontuação: <span>00</span></div>    
+        </div>
+        <div class="game-over">Fim de Jogo</div>
+        <span class="text_pause">Pause</span>
+        <canvas class="canvas" width="360" height="360"></canvas>
+        <div class="container_controles">
+            <div class="temas">
+                <div class="content_tema">
+                    <div class="controle_tema">
+                        <div class="R_L voTmS"><img src="./assets/esquerda.png" /></div>
+                        <span>Cobrinha</span><span class="num_cobra">1</span>
+                        <div class="R_L avTmS"><img src="./assets/direita.png" /></div>    
+                    </div>
+                </div>
+                <div class="content_tema">
+                    <div class="controle_tema">
+                        <div class="R_L voTmC"><img src="./assets/esquerda.png" /></div>
+                        <span>Campo</span><span class="num_campo">1</span>
+                        <div class="R_L avTmC"><img src="./assets/direita.png" /></div>                        
+                    </div>
+                </div>
+                <button class="btn-play">Jogar</button>
+            </div>
+            <div class="controles">
+                    <div class="U_D cima"><img src="./assets/cima.png" /></div>
+                    <div class="content_RL">
+                        <div class="R_L esquerda"><img src="./assets/esquerda.png" /></div>
+                        <div class="pp">
+                            <img class="play" src="./assets/play.png"/>
+                            <img class="pause" src="./assets/pause.png"/>
+                        </div>
+                        <div class="R_L direita"><img src="./assets/direita.png" /></div>
+                    </div>
+                    <div class="U_D baixo"><img src="./assets/baixo.png" /></div>
+            </div>
+        </div>
+    </div>  
+    <script src="./js/script.js"></script>
+</body>
+</html>

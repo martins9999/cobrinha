@@ -31,12 +31,14 @@ avancarTemaS.addEventListener('click', ()=> {
         temaSnake += 1;
     }
     snakeTema()
+    numCobra.textContent = temaSnake;
 })
 voltarTemaS.addEventListener('click', ()=> {
     if(temaSnake > 1) {
         temaSnake -= 1;
     }
     snakeTema()
+    numCobra.textContent = temaSnake;
 })
 const snakeTema = () => {
     if(temaSnake === 1) {
@@ -61,40 +63,49 @@ const snakeTema = () => {
     }      
 }
 
-
+const numCampo = document.querySelector('.num_campo');
+const numCobra = document.querySelector('.num_cobra');
+const containerControles = document.querySelector('.container_controles');
 avancarTemaC.addEventListener('click', ()=> {
     if(temaCanvas < 5) {
         temaCanvas += 1;
     }
     canvasTema()
+    numCampo.textContent = temaCanvas;
 })
 voltarTemaC.addEventListener('click', ()=> {
     if(temaCanvas > 1) {
         temaCanvas -= 1;
     }
     canvasTema()
+    numCampo.textContent = temaCanvas;
 })
 
 const canvasTema = () => {
     if(temaCanvas === 1) {
         canvas.style.backgroundColor="rgb(0,80,40)";
         placar.style.backgroundColor="rgb(0,80,40)";
+        containerControles.style.backgroundColor="rgb(0,80,40)";
     }
     if(temaCanvas === 2) {
         canvas.style.backgroundColor="rgb(80,80,40)";
         placar.style.backgroundColor="rgb(80,80,40)";
+        containerControles.style.backgroundColor="rgb(80,80,40)";
     }
     if(temaCanvas === 3) {
         canvas.style.backgroundColor="rgb(80,80,80)";
         placar.style.backgroundColor="rgb(80,80,80)";
+        containerControles.style.backgroundColor="rgb(80,80,80)";
     }
     if(temaCanvas === 4) {
         canvas.style.backgroundColor="rgb(80,40,80)";
         placar.style.backgroundColor="rgb(80,40,80)";
+        containerControles.style.backgroundColor="rgb(80,40,80)";
     }
     if(temaCanvas === 5) {
         canvas.style.backgroundColor="rgb(40,80,80)";
         placar.style.backgroundColor="rgb(40,80,80)";
+        containerControles.style.backgroundColor="rgb(40,80,80)";
     }      
 }
 
